@@ -71,11 +71,11 @@ func Median(times []Time) Time {
   if length % 2 == 1 {
     return times[length / 2]
   } else {
-    return Average( times[length/2-1 : length/2] )
+    return Average( times[length/2-1 : length/2+1] )
   }
 }
 
-func Stati(strg string) string { 
+func Stati(strg string) string {
   if strg == "" {return ""}
 
   strg = strings.ReplaceAll(strg, ",", "")
@@ -85,7 +85,7 @@ func Stati(strg string) string {
   times := make([]Time, len(fields))
   for i, field := range fields {
     times[i] = parseTime(field)
-  }  
+  }
   
   return fmt.Sprintf("Range: %v Average: %v Median: %v", Range(times), Average(times), Median(times))
 }
