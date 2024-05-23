@@ -75,7 +75,9 @@ func Median(times []Time) Time {
   }
 }
 
-func Stati(strg string) string {
+func Stati(strg string) string { 
+  if strg == "" {return ""}
+
   strg = strings.ReplaceAll(strg, ",", "")
   
   fields := strings.Fields(strg)
